@@ -1,17 +1,23 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+module Assignment
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
-  </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="main.fs" />
-    <Compile Include="tests.fs" />
-  </ItemGroup>
+type AMPM = AM | PM
 
-  <ItemGroup>
-    <Reference Include="Expecto.dll" />
-  </ItemGroup>
+let areHoursInvalid h = 
+  if h < 1 || h > 12 then
+    true
+  else
+    false
 
-</Project>
+
+let areMinutesInvalid m =
+  if m < 1 || m > 59 then
+    true
+  else
+    false
+
+let time h m ampm :(12 * 0 * AMPM) =
+  (h, m, ampm)
+
+let lessThan (time1: h * m * AMPM) (time2: h * m * AMPM) :bool =
+  false
